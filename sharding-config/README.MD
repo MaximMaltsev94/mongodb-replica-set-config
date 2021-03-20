@@ -24,7 +24,7 @@ mongos --configdb configdb-repl/localhost:27400,localhost:27401,localhost:27402 
 
 ```
 
-Conect to `monsos`
+Connect to `mongos`
 ```
 mongo --port 27500
 ```
@@ -38,4 +38,5 @@ sh.addShard("repl2-name/primary:port,secondary:port")
 Enable sharding for collection
 ```
 sh.enableSharding("bank")
+sh.shardCollection("bank.customers", { "name" : 1 })
 ```
